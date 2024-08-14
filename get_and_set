@@ -1,1 +1,24 @@
-h
+#include<iostream>
+using namespace std;
+class Clac{
+    private:
+    int num1 ;
+    int num2 ;
+    public:
+    void setnum(int a,int b){
+        num1 =a,num2 = b;
+    }
+        int getsum(){
+            return(num1 + num2);
+        }
+        int getdiff(){
+            return num1 - num2;
+        }
+        };
+        int main(){
+            Clac obj;
+            obj.setnum(1000,500);
+            cout<<obj.getsum()<<endl;
+            cout<<obj.getdiff()<<endl;
+            return 0;
+        }
