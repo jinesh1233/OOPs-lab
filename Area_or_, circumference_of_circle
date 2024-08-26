@@ -24,7 +24,7 @@ public:
         return count;
     }
 };
-const float Circle::PI = 3.14159;
+const float Circle::PI = 3.14;
 int Circle::count = 0;
 
 int main() {
