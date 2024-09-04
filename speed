@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class Travel {
+    int distance;
+    float time;
+public:
+    void setvalue(int d, float t) {
+        distance = d;
+        time = t;
+    }
+   friend float speed(Travel t);
+};
+
+float speed(Travel t) {
+    if (t.time != 0) {
+        return t.distance / t.time;
+    } else {
+        cout << "Time cannot be zero." << endl;
+        return 0;
+    }
+}
+
+int main() {
+    Travel sobj;
+    sobj.setvalue(100, 2.5); 
+
+    float spd = speed(sobj);
+    cout << "Speed: " << spd << " units/time" << endl;
+
+    return 0;
+}
