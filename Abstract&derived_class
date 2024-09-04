@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+class Shape {
+protected:
+    float length;
+    float width;
+
+public:
+    Shape(float l = 0, float w = 0) : length(l), width(w) {}
+
+    float getLength() const {
+        return length;
+    }
+
+    float getWidth() const {
+        return width;
+    }
+
+    virtual float getPerimeter() const = 0;
+};
+
+class Square : public Shape {
+public:
+    Square(float side) : Shape(side, side) {}
+
+    float getPerimeter() const override {
+        return 4 * length;
+    }
+
+    friend float circleParameters(Square sq);
+};
+
+class Rectangle : public Shape {
+public:
+    Rectangle(float l, float w) : Shape(l, w) {}
+
+    float getPerimeter() const override {
+        return 2 * (length + width);
+    }
+};
+
+float circleParameters(Square sq) {
+    return sq.length * sq.length * 3.14159;
+}
+
+int main() {
+    Square square(5);
+    Rectangle rectangle(4, 6);
+
+    cout << "Square perimeter: " << square.getPerimeter() << endl;
+    cout << "Rectangle perimeter: " << rectangle.getPerimeter() << endl;
+
+    float circleArea = circleParameters(square);
+    cout << "Circle area using square's side as diameter: " << circleArea << endl;
+
+    return 0;
+}
