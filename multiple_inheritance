@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+class Person{
+    public:
+    string name;
+    int age;
+};
+class sport{
+    public:
+    char sp_name;
+    int no_of_medals;
+};
+class student:private Person,sport{
+    public:
+    void display(){
+        cout<<"\n\nStudent name:\t "<<name<<endl;
+        cout<<"Student age: \t"<<age<<endl;
+        cout<<"Sports name:"<<sp_name<<endl;;
+        cout<<"No of medals"<<no_of_medals<<endl;
+    }
+    void setter(){
+        cout<<"Enter name:\t";
+        cin>>name;
+        cout<<"Enter age:\t";
+        cin>>age;
+        cout<<"Enter sports name:\t";
+        cin>>sp_name;
+        cout<<"Enter no of medals:\t";
+        cin>>no_of_medals;
+    }
+};
+int main(){
+    student st;
+    st.setter();
+    st.display();
+    return 0;
+}
