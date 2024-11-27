@@ -1,0 +1,20 @@
+
+
+template <class T>
+Class Test {
+private: answer,
+public:
+Test (Tn): answer (n) {
+cout <<"Inside constructor" <<endl;
+
+}
+
+T get Number(){
+ return answer;
+}
+};
+int main(){
+Test <int> numberInt(10);
+cout << Integer number<<numberInt.getnumber()<<endl;
+return 0;
+}
